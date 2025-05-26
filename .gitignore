@@ -1,0 +1,21 @@
+# Node.js (frontend)
+e-commerce/node_modules/
+e-commerce/dist/
+e-commerce/.env
+e-commerce/.vite
+
+# Python/Django (backend)
+ecommerce_api/__pycache__/
+ecommerce_api/*.pyc
+ecommerce_api/env/
+ecommerce_api/.env
+ecommerce_api/db.sqlite3
+
+# Docker
+*.log
+*.pid
+docker-compose.override.yml
+
+# IDEs
+.vscode/
+.idea/

@@ -1,0 +1,96 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Premium Wireless Headphones",
+      "description": "Immerse yourself in crystal-clear audio with these premium noise-cancelling wireless headphones. Perfect for music lovers and professionals alike.",
+      "price": 299.99,
+      "imageUrl": "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Electronics",
+      "inStock": true,
+      "createdAt": "2023-01-15T09:30:00Z",
+      "updatedAt": "2023-07-22T14:45:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Smart Fitness Watch",
+      "description": "Track your fitness goals with this advanced smart watch. Features heart rate monitoring, sleep tracking, and workout analytics.",
+      "price": 149.99,
+      "imageUrl": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Wearables",
+      "inStock": true,
+      "createdAt": "2023-02-10T11:20:00Z",
+      "updatedAt": "2023-08-05T16:30:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Ergonomic Office Chair",
+      "description": "Designed for comfort during long work hours. Adjustable height, lumbar support, and breathable mesh back provide the ultimate sitting experience.",
+      "price": 249.99,
+      "imageUrl": "https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Furniture",
+      "inStock": false,
+      "createdAt": "2023-03-05T14:10:00Z",
+      "updatedAt": "2023-09-12T10:15:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Professional DSLR Camera",
+      "description": "Capture life's moments with stunning clarity. This professional-grade camera offers 24.2MP resolution, 4K video recording, and interchangeable lenses.",
+      "price": 1299.99,
+      "imageUrl": "https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Photography",
+      "inStock": true,
+      "createdAt": "2023-04-20T08:45:00Z",
+      "updatedAt": "2023-10-08T12:20:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Stylish Leather Backpack",
+      "description": "Combining style and functionality, this genuine leather backpack features multiple compartments including a padded laptop sleeve.",
+      "price": 89.99,
+      "imageUrl": "https://images.pexels.com/photos/1546003/pexels-photo-1546003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Fashion",
+      "inStock": true,
+      "createdAt": "2023-05-12T15:30:00Z",
+      "updatedAt": "2023-11-15T09:40:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Ultra-Thin Laptop",
+      "description": "Powerful performance meets sleek design. This ultra-thin laptop features a 14-inch 4K display, 16GB RAM, and 1TB SSD storage.",
+      "price": 1499.99,
+      "imageUrl": "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Electronics",
+      "inStock": true,
+      "createdAt": "2023-06-08T10:15:00Z",
+      "updatedAt": "2023-12-20T17:25:00Z"
+    },
+    {
+      "id": "7",
+      "name": "Organic Skincare Set",
+      "description": "Pamper your skin with this luxurious organic skincare set. Includes cleanser, toner, moisturizer, and serum made from natural ingredients.",
+      "price": 79.99,
+      "imageUrl": "https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Beauty",
+      "inStock": true,
+      "createdAt": "2023-01-25T13:40:00Z",
+      "updatedAt": "2023-07-18T11:10:00Z"
+    },
+    {
+      "id": "8",
+      "name": "Smart Home Security System",
+      "description": "Protect your home with this advanced security system. Includes motion sensors, cameras, and 24/7 monitoring with smartphone alerts.",
+      "price": 349.99,
+      "imageUrl": "https://images.pexels.com/photos/60504/security-home-protection-smart-house-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Home",
+      "inStock": false,
+      "createdAt": "2023-02-18T09:20:00Z",
+      "updatedAt": "2023-08-30T15:45:00Z"
+    }
+  ],
+  "total": 100,
+  "page": 1,
+  "limit": 10,
+  "totalPages": 10
+}
