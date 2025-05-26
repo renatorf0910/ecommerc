@@ -20,3 +20,8 @@ docker-compose.override.yml
 .vscode/
 .idea/
 gj
+
+# ENV
+.env/
+.venv/
+.env
