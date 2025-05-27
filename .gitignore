@@ -2,7 +2,6 @@
 e-commerce/node_modules/
 e-commerce/dist/
 e-commerce/.env
-e-commerce/.vite
 
 # Python/Django (backend)
 ecommerce_api/__pycache__/
