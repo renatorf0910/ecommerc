@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import authenticate
-
+from .serializers import UserSerializer
 
 class RegisterView(APIView):
     permission_classes = [AllowAny]
@@ -62,6 +62,8 @@ class MeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        print(f'1')
         serializer = UserSerializer(request.user)
+        print(f'2')
         return Response(serializer.data)
 

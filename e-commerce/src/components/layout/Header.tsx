@@ -59,10 +59,9 @@ export const Header: React.FC = () => {
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
-            
-            {/* Authentication */}
+            </button>            
             <div className="hidden md:flex md:items-center md:space-x-4">
+              <>{console.log(user)}
               {user ? (
                 <div className="flex items-center space-x-4">
                   <span className="text-sm text-gray-700 dark:text-gray-300">
@@ -86,6 +85,7 @@ export const Header: React.FC = () => {
                   </Link>
                 </div>
               )}
+              </>
             </div>
             
             {/* Mobile Menu Button */}

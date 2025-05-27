@@ -2,15 +2,28 @@ import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:8000/api';
 
+const api = axios.create({
+  baseURL: API_BASE_URL,
+});
+
+const setAuthToken = (token: string | null) => {
+  if (token) {
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common['Authorization'];
+  }
+};
+
 export const authService = {
   login: async ({ email, password }: { email: string; password: string }) => {
-    const response = await axios.post(`${API_BASE_URL}/auth/login/`, { email, password });
+    const response = await api.post('/auth/login/', { email, password });
     const { access, refresh } = response.data;
+
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);
-    axios.defaults.headers.common['Authorization'] = `Bearer ${access}`;
+    setAuthToken(access);
 
-    return { data: { access, refresh } };
+    return response;
   },
 
   register: async ({
@@ -24,20 +37,18 @@ export const authService = {
     password: string;
     passwordConfirmation: string;
   }) => {
-    const response = await axios.post(`${API_BASE_URL}/register/`, {
+    return api.post('/register/', {
       name,
       email,
       password,
       password_confirmation: passwordConfirmation,
     });
-
-    return response.data;
   },
 
   logout: () => {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
-    delete axios.defaults.headers.common['Authorization'];
+    setAuthToken(null);
   },
 
   isAuthenticated: () => {
@@ -45,7 +56,11 @@ export const authService = {
   },
 
   getCurrentUser: async () => {
-    const response = await axios.get(`${API_BASE_URL}/me/`);
-    return response.data;
+    const token = localStorage.getItem('access_token');
+    setAuthToken(token);
+    return api.get('/me/');
   },
+
+  setAuthToken,
+  api, // se quiser usar direto a instância em outras partes
 };

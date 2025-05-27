@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User } from '../types/user';
 import { authService } from '../services/auth.service';
+import { User } from '../types/user';
 import { ApiError } from '../types/api';
 
 interface AuthContextType {
@@ -30,8 +30,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const response = await authService.getCurrentUser();
         setUser(response.data);
       } catch (err) {
-        console.error('Failed to load user:', err);
+        console.error('Erro ao buscar usuário atual', err);
         authService.logout();
+        setUser(null);
       } finally {
         setIsLoading(false);
       }
@@ -43,13 +44,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (email: string, password: string) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const response = await authService.login({ email, password });
-      setUser(response.data.user);
+      const userResponse = await authService.getCurrentUser();
+      setUser(userResponse.data);
     } catch (err) {
       const apiError = err as ApiError;
-      setError(apiError.message || 'Login failed');
+      setError(apiError.message || 'Erro no login');
       throw err;
     } finally {
       setIsLoading(false);
@@ -57,25 +59,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const register = async (
-    name: string, 
-    email: string, 
-    password: string, 
+    name: string,
+    email: string,
+    password: string,
     passwordConfirmation: string
   ) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
-      await authService.register({
-        name,
-        email,
-        password,
-        passwordConfirmation,
-      });
+      await authService.register({ name, email, password, passwordConfirmation });
       await login(email, password);
     } catch (err) {
       const apiError = err as ApiError;
-      setError(apiError.message || 'Registration failed');
+      setError(apiError.message || 'Erro no cadastro');
       throw err;
     } finally {
       setIsLoading(false);
@@ -96,8 +93,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+  if (!context) {
+    throw new Error('useAuth deve ser usado dentro de um AuthProvider');
   }
   return context;
 };
