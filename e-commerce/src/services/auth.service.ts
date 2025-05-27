@@ -62,5 +62,5 @@ export const authService = {
   },
 
   setAuthToken,
-  api, // se quiser usar direto a instância em outras partes
+  api,
 };

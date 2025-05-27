@@ -26,14 +26,11 @@ export const Header: React.FC = () => {
     <header className="bg-white dark:bg-gray-900 sticky top-0 z-40 w-full border-b border-gray-200 dark:border-gray-700 shadow-sm transition-all">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-blue-600 dark:text-blue-500">
               API Explorer
             </Link>
-          </div>
-          
-          {/* Desktop Navigation */}
+          </div>          
           <nav className="hidden md:flex md:items-center md:space-x-6">
             {navigationItems.map((item) => (
               <Link
@@ -49,10 +46,7 @@ export const Header: React.FC = () => {
               </Link>
             ))}
           </nav>
-          
-          {/* Action Buttons */}
           <div className="flex items-center space-x-4">
-            {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className="rounded-full p-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
@@ -87,8 +81,6 @@ export const Header: React.FC = () => {
               )}
               </>
             </div>
-            
-            {/* Mobile Menu Button */}
             <div className="flex md:hidden">
               <button
                 className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
@@ -102,7 +94,6 @@ export const Header: React.FC = () => {
           </div>
         </div>
         
-        {/* Mobile Menu */}
         <div 
           className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}
         >
@@ -122,7 +113,6 @@ export const Header: React.FC = () => {
               </Link>
             ))}
             
-            {/* Mobile Authentication */}
             {user ? (
               <div className="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
                 <div className="px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
